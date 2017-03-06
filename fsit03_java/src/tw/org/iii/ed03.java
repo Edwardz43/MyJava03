@@ -9,16 +9,16 @@ public class ed03 {
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.println("Enter two numbers :");
-		System.out.println("m = ");
-		int m = scan.nextInt();
+		System.out.print("m = ");
+		double m = scan.nextInt();
 		
-		System.out.println("n =");
-		int n = scan.nextInt();
+		System.out.print("n =");
+		double n = scan.nextInt();
 		
-		System.out.println("GCD :" + gcd(m, n));
-		System.out.println("LCM :" + (m * n / gcd(m, n)));
+		System.out.println("GCD :" + (int)(gcd(m, n)));
+		System.out.println("LCM :" + (int)((m * n / gcd(m, n))));
 	}
-	private static int gcd(int m, int n){
+	private static double gcd(double m, double n){
 		if(n == 0){
 			return m;
 		}else{
