@@ -14,8 +14,10 @@ public class Ed09 {
 			
 			if(ans > guess){
 				System.out.println("Too small !");
+				System.out.print("Try again :");
 			}else if(ans < guess){
 				System.out.println("Too big !");
+				System.out.print("Try again :");
 			}else{
 				System.out.println("Bingo !");
 				break;

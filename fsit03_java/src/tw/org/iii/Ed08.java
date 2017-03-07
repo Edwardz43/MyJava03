@@ -19,7 +19,7 @@ public class Ed08 {
         
         for(i = 0; i < N; i++) 
         { 
-            int j = (int) (Math.random() * N + 1);
+            int j = (int) (Math.random() * N );
             int tmp = poker[i]; 
             poker[i] = poker[j]; 
             poker[j] = tmp; 
