@@ -8,7 +8,10 @@ public class Ed09 {
 		do{
 			guess();
 		}while(true);
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'master' of https://github.com/Edwardz43/MyJava03.git
 	}
 	
 	public static void guess(){	
