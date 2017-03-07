@@ -8,6 +8,7 @@ public class Ed09 {
 		do{
 			guess();
 		}while(true);
+
 	}
 	
 	public static void guess(){	
