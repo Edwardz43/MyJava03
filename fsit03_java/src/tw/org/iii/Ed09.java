@@ -5,7 +5,12 @@ import java.util.Scanner;
 public class Ed09 {
 
 	public static void main(String[] args) {
-		
+		do{
+			guess();
+		}while(true);
+	}
+	
+	public static void guess(){	
 		int ans = (int)(Math.random()*100);
 		while(true){
 			System.out.print("Enter Number :");
@@ -14,14 +19,12 @@ public class Ed09 {
 			
 			if(ans > guess){
 				System.out.println("Too small !");
-				System.out.print("Try again :");
 			}else if(ans < guess){
 				System.out.println("Too big !");
-				System.out.print("Try again :");
 			}else{
 				System.out.println("Bingo !");
 				break;
 			}
 		}
-	}
+	}	
 }
