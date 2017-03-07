@@ -9,7 +9,7 @@ public class ed04 {
 				if(j == 9){
 					System.out.printf(i + "x" + j + "=" + "%2d" + "\n", m);
 				}else{
-				System.out.printf(i + "x" + j + "=" + "%2d" + " ", m);
+				System.out.printf(i + "x" + j + "=" + "%2d" + "\t", m);
 				}
 			}
 		}
