@@ -42,7 +42,7 @@ public class Ed08 {
                 case 11: System.out.print(" J"); break;     //決定點數
                 default: System.out.printf("%2d", remain); 
             } 
-            System.out.printf("%c", (i + 1) % 13 == 0 ? '\n' : ' '); //補充  每發13張就換行 
+            System.out.printf("%c", (i + 1) % 13 == 0 ? '\n' : '\t'); //補充  每發13張就換行 
         } 
     }
 }
