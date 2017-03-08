@@ -8,6 +8,7 @@ public class Ed11 {
 		System.out.print("*");	
 		return "";
 	}
+	//draw方法  畫星星
 	
 	public static void main(String[] args) {
 		System.out.print("輸入大小:");
