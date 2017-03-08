@@ -12,7 +12,8 @@ public class Ed09 {
 	}
 	
 	public static void guess(){	
-		int ans = (int)(Math.random()*100);
+		int ans = (int)(Math.random()*100 + 1);
+		System.out.println(ans);
 		while(true){
 			System.out.print("Enter Number :");
 			Scanner scan = new Scanner(System.in);
