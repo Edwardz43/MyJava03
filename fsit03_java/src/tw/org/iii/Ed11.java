@@ -16,13 +16,13 @@ public class Ed11 {
 //		}
 //		return p;
 //	}轉換成巴斯卡  失敗!
-	
+
 	
 	public static void loop(int input){	//改造成loop方法  練習一下
 		for(int i = 1; i < input; i++){
 			System.out.printf(String.format("%%%ds", (input - i) * 2), "");//這段不太了解  是看書上的範例  
-			for(int j = 1; j < i; j++){//主要是算出每行前面要空幾格讓形狀對齊
-				System.out.printf("%4s", draw(j + 1));//呼叫draw方法  畫星星  %5s讓每行的星星間隔一樣
+			for(int j = 1; j <= i; j++){//主要是算出每行前面要空幾格讓形狀對齊
+				System.out.printf("%4s", draw(j));//呼叫draw方法  畫星星  %5s讓每行的星星間隔一樣
 			}	
 			System.out.println();	
 		}
@@ -30,8 +30,8 @@ public class Ed11 {
 		
 		for(int i = input - 2; i > 0; i--){              //反過來畫 所以迴圈的順序想了一下 讓他顛倒
 			System.out.printf(String.format("%%%ds", (input - i) * 2), "");
-			for(int j = 1; j < i; j++){
-				System.out.printf("%4s", draw(j + 1));
+			for(int j = 1; j <= i; j++){
+				System.out.printf("%4s", draw(j));
 			}	
 			System.out.println();	
 		}
