@@ -11,6 +11,11 @@ public class Ed07 {
 		Scanner scan = new Scanner(System.in);
 		
 		int i = scan.nextInt();
+		
+		fib(i);
+	}
+	
+	private static void fib(int i){	
 		int[] fib = new int[i];
 		
 		for(i = 0; i < fib.length; i++){
