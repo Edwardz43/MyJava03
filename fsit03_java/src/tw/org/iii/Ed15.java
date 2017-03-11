@@ -8,6 +8,7 @@ public class Ed15 {
 //		for(int i = 0; i < number.length; i++){
 //			System.out.printf(rank[i] + ",");
 //		} 測試用!
+		
 		for(int i = 0; i < number.length; i++){
 			rank[i] = 1;
 			for(int j = 0; j < number.length; j++){
