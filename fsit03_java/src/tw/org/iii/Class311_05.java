@@ -16,9 +16,6 @@ public class Class311_05 {
 			}
 		}
 		
-		
-	
-	
 	public static void main(String[] args) {		
 		for(int j = 0; j < 10; j++ ){         //開始處理11~100
 			for(int i = 1; i <= 10; i ++){
