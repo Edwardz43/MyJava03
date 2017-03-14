@@ -57,7 +57,7 @@ public class Ed17_calender {
 			day[i]=i;
 		}
 		
-		//3.2 超級重點  格式!  首先要決定空幾個
+		//3.2 超級重點  格式!  首先要決定空幾格
 		for(int i=0;i<w;i++){//例如 1982年9月的第一天是禮拜3(w)  所以前就要先空3格  for一下吧
 			System.out.print("\t");
 		}
@@ -70,13 +70,13 @@ public class Ed17_calender {
 		
 		//3.4 第二列以後的就會按照規律  所以寫法跟質數的作業類似   不過要記得扣掉第一列的那幾天
 		for(int i=0;i<day.length-7+w;i++){
-			System.out.print((i+1)%7==0?day[i]+8-w+"\t"+"\n":day[i]+8-w+"\t");
+			System.out.print((i+1)%7==0?day[i]+8-w+"\t"+"\n":day[i]+8-w+"\t");//輸出天數時要多"+1"
 		}
 	}
 	
 	
 	public static void main(String[] args) {
-		System.out.println("請輸入日期:\n(格式:yyyy mm)");
+		System.out.println("請輸入日期:\n(格式:yyyy mm , 中間空白分隔)");
 		Scanner scan = new Scanner(System.in);
 		int year = scan.nextInt();
 		int month = scan.nextInt();
