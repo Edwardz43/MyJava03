@@ -2,8 +2,6 @@ package tw.org.iii;
 
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
-
 public class Ed17_calender {
 	/*	keypoint:
 	 * 	利用其中的資料 https://goo.gl/nKAXwX 找出y年m月的第一天
