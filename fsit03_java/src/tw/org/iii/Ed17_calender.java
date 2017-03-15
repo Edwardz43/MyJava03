@@ -107,10 +107,43 @@ public class Ed17_calender {
 	// 經過修改  main方法縮短很多   增加閱讀性
 	public static void main(String[] args) {
 		// 3/15 修改輸入模式   年分和月分開  更清楚   介面改成 JOP
-		String Y = JOptionPane.showInputDialog("請輸入年分:\n(格式:yyyy)");
-		int year = Integer.parseInt(Y);
-		String M = JOptionPane.showInputDialog("請輸入月分:\n(格式:mm)");
-		int month = Integer.parseInt(M);
+		
+		
+		// 3/15 加入一個檢查輸入的機制
+		int year=0;
+		int month=0;
+		boolean check = true;
+		
+		//檢查輸入年分是否正確
+		do{
+			String Y = JOptionPane.showInputDialog("請輸入年分:\n(格式:yyyy)");
+			if(!Y.matches("[0-9]{1,4}")){
+				JOptionPane.showMessageDialog(null, "輸入錯誤!\n請輸入正確格式:yyyy");
+				check = false;
+			}else{
+				year = Integer.parseInt(Y);
+				check = true;
+			}
+		}while(!check);
+		
+		//檢查輸入月分是否正確  除了數字以外  M還必須在1~12之間
+		do{
+			String M = JOptionPane.showInputDialog("請輸入月分:\n(格式:mm)");
+			if(!M.matches("[0-9]{1,2}")){
+				JOptionPane.showMessageDialog(null, "輸入錯誤!\n請輸入正確格式:mm");
+				check =false;
+			}else{
+				month = Integer.parseInt(M);
+				if(month>12){
+					JOptionPane.showMessageDialog(null, "輸入錯誤!\n請輸入正確格式:mm");
+					check = false;
+				}else{
+					check = true;
+				}
+			}
+		}while(!check);
+		
+		
 		
 		//1. 利用公式找出每月的第一天
 		int w = week(year,month);
@@ -120,6 +153,7 @@ public class Ed17_calender {
 		int d =setDays(year,month);
 		
 		// 預先列出layout
+		System.out.println("列印月份: "+year+"年"+month+"月");
 		String[] week = {"Sun","Mon","Tue","Wed","Thu","Fri","Sat"};
 		for(String v :week){
 			System.out.print(v+"\t");
