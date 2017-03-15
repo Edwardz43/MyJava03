@@ -2,6 +2,8 @@ package tw.org.iii;
 
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class Ed17_calender {
 	/*	keypoint:
 	 * 	利用其中的資料 https://goo.gl/nKAXwX 找出y年m月的第一天
@@ -13,6 +15,7 @@ public class Ed17_calender {
 	 *  m:月份-2 (1,2月 =>11,12)
 	 *  d:日期
 	*/
+	
 	//1. 利用公式找出每月的第一天
 	static int week(int y, int m){
 		int C = y/100;
@@ -64,22 +67,27 @@ public class Ed17_calender {
 		
 		//3.3 空完3格  接下來就開始塞1號,2號....but 我"先"輸入第一列喔!
 		for(int i=0;i<7-w;i++){
-			System.out.print(day[i]+1+"\t");
+			System.out.print("  "+day[i+1]+"\t");
 		}
 		System.out.println();
 		
 		//3.4 第二列以後的就會按照規律  所以寫法跟質數的作業類似   不過要記得扣掉第一列的那幾天
+		// 3/15 修改一下輸出的樣式  為了整齊美觀
 		for(int i=0;i<day.length-7+w;i++){
-			System.out.print((i+1)%7==0?day[i]+8-w+"\t"+"\n":day[i]+8-w+"\t");//輸出天數時要多"+1"
+			System.out.print((day[i+1]+7-w)<10?"  "+(day[i+1]+7-w)+"\t":" "+(day[i+1]+7-w)+"\t");//輸出天數時要多"+1"
+			if(i%7 ==6){
+				System.out.println();
+			}
 		}
 	}
 	
 	
 	public static void main(String[] args) {
-		System.out.println("請輸入日期:\n(格式:yyyy mm , 中間空白分隔)");
-		Scanner scan = new Scanner(System.in);
-		int year = scan.nextInt();
-		int month = scan.nextInt();
+		// 3/15 修改輸入模式   年分和月分開  更清楚   介面改成 JOP
+		String Y = JOptionPane.showInputDialog("請輸入年分:\n(格式:yyyy)");
+		int year = Integer.parseInt(Y);
+		String M = JOptionPane.showInputDialog("請輸入月分:\n(格式:mm)");
+		int month = Integer.parseInt(M);
 		
 		//1. 利用公式找出每月的第一天
 		int w = week(year,month);
@@ -105,7 +113,7 @@ public class Ed17_calender {
 		}
 		
 		// 預先列出格式
-		String[] week = {"日","一","二","三","四","五","六"};
+		String[] week = {"Sun","Mon","Tue","Wed","Thu","Fri","Sat"};
 		for(String v :week){
 			System.out.print(v+"\t");
 		}
